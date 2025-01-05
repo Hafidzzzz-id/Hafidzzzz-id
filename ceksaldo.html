@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOPERASI SINAR Harapan</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3;
+            padding: 0.5rem 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 2rem;
+            display: none;
+        }
+        .container.active {
+            display: block;
+        }
+        #login {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+        }
+        #login form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: #0e1bcc;
+        }
+    </style>
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.container');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('login');
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>KOPERASI SINAR HARAPAN</h1>
+        <img src="logo.jpg.webp"width="300">
+    </header>
+    <nav>
+        <a href="login.html" onclick="showPage('login')">Login</a>
+        <a href="BERANDA.HTML" onclick="showPage('beranda')">Beranda</a>
+        <a href="penyimpanan-peminjaman.html" onclick="showPage('penyimpanan-peminjaman')">Penyimpanan-Peminjaman Dana</a>
+        <a href="ceksaldo.html"onclick="showPage('cek saldo')">Cek Saldo</a>
+    </nav>
+
+    <div id="login" class="container">
+    <form>
+       <center><img src="uang.jpg"width="200">
+       </center>
+        <p></p>
+    <a href="#" onclick="showPage('saldo-simpanan')">Saldo Simpanan</a>
+    <div id="saldo-simpanan" class="container">
+    <h2>Saldo Simpanan</h2>
+    <p>Berikut adalah saldo simpanan Anda:</p>
+    <div class="status-section">
+        <h3>Saldo Terkini</h3>
+        <p id="saldo-info">Rp 9999999999</p>
+    </div></p>
+    <button class="btn" onclick="showPage('beranda')">Kembali ke Beranda</button>
+</form>
+</div>
